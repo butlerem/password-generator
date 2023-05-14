@@ -45,34 +45,37 @@ function generatePassword() {
     var randomCharType = "";
     var randomChar = "";
 
-    // Select a random character type
-    if (includeLowercase) {
-      randomCharType = "lowercase";
-    }
+// Select a random character type
+var charTypes = [];
 
-    if (includeUppercase) {
-      randomCharType = "uppercase";
-    }
+if (includeLowercase) {
+  charTypes.push("lowercase");
+}
 
-    if (includeNumeric) {
-      randomCharType = "numeric";
-    }
+if (includeUppercase) {
+  charTypes.push("uppercase");
+}
 
-    if (includeSpecial) {
-      randomCharType = "special";
-    }
+if (includeNumeric) {
+  charTypes.push("numeric");
+}
 
-    // Generate a random character based on the selected character type
+if (includeSpecial) {
+  charTypes.push("special");
+}
 
-    if (randomCharType === "lowercase") {
-      randomChar = lowercaseChars.charAt(Math.floor(Math.random() * lowercaseChars.length));
-    } else if (randomCharType === "uppercase") {
-      randomChar = uppercaseChars.charAt(Math.floor(Math.random() * uppercaseChars.length));
-    } else if (randomCharType === "numeric") {
-      randomChar = numericChars.charAt(Math.floor(Math.random() * numericChars.length));
-    } else if (randomCharType === "special") {
-      randomChar = specialChars.charAt(Math.floor(Math.random() * specialChars.length));
-    }
+var randomCharType = charTypes[Math.floor(Math.random() * charTypes.length)];
+
+// Generate a random character based on the selected character type
+if (randomCharType === "lowercase") {
+  randomChar = lowercaseChars.charAt(Math.floor(Math.random() * lowercaseChars.length));
+} else if (randomCharType === "uppercase") {
+  randomChar = uppercaseChars.charAt(Math.floor(Math.random() * uppercaseChars.length));
+} else if (randomCharType === "numeric") {
+  randomChar = numericChars.charAt(Math.floor(Math.random() * numericChars.length));
+} else if (randomCharType === "special") {
+  randomChar = specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+}
 
     password += randomChar;
   }
