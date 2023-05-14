@@ -4,7 +4,8 @@
 
 This challenge provides a password generator that allows users to create new passwords with customizable criteria. This generator prompts users for password criteria, including password length and character types. Once all prompts are answered, a password is generated that matches the selected criteria.
 
-Usage
+## Usage
+
 To use this password generator, follow these steps:
 -Click the "Generate Password" button on the web page. A series of prompts for password criteria will appear.
 -Select which criteria to include in the password.
